@@ -8,7 +8,7 @@ node {
   
   stage("Build Image"){
 
-   def antHome = tool 'ant'
+   def antHome = tool name: 'ant', type: 'ant'
     
     sh 'echo Logged in user is : ${USER}'
     sh 'java -version'
