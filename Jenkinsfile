@@ -3,7 +3,7 @@
 node {
     stage('Preparation') { 
     
-    choice1= new choiceParameterDefinition('AppEnvironment',['app-dev','app-stg','app-prd']as String[],'Choose Environment for Build')
+    choice1= new ChoiceParameterDefinition('AppEnvironment',['app-dev','app-stg','app-prd']as String[],'Choose Environment for Build')
 
      sh '''
      
@@ -16,7 +16,7 @@ node {
        def branches = file1.readLines()
        
        
-     choice2 = new choiceParameterDefinition('SelectedBranch', branches as String[] , 'Choose Branch')
+     choice2 = new ChoiceParameterDefinition('SelectedBranch', branches as String[] , 'Choose Branch')
      
      def userInput = input(id:'userInput' , message:"Let\'s Build Image ?",Parameters : [choice1,choice2])
      
