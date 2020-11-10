@@ -10,7 +10,7 @@ node {
 
    def antHome = tool name: 'ant', type: 'ant'
     
-    sh "echo Logged in user is : ${USER}"
+    sh 'echo Logged in user is : ${USER}'
     sh 'java -version'
     sh "echo 1...antHome = ${antHome}"
    // sh 'export JAVA_HOME = /etc/alternatives/java'
